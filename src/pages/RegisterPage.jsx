@@ -81,26 +81,21 @@ const RegisterPage = () => {
 
   return (
     <div className={styles.registerContainer}>
-      {/* Back Button */}
       <button onClick={() => navigate("/")} className={styles.backButton}>
         <FaArrowLeft /> {t("home")}
       </button>
-
-      {/* Register Card */}
       <motion.div
         className={styles.registerCard}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        {/* Header */}
         <div className={styles.header}>
           <h1 className={styles.title}>{t("appName")}</h1>
           <h2 className={styles.subtitle}>{t("createAccount")}</h2>
           <p className={styles.description}>{t("registerFree")}</p>
         </div>
 
-        {/* Error Message */}
         {error && (
           <div className={styles.errorMessage}>
             <span>❌</span>
