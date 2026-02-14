@@ -1,0 +1,177 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.container {
+  background: #8b9a6e;
+  border: 8px solid #4a5a3a;
+  padding: 1.5rem;
+  box-shadow:
+    inset -4px -4px 0 #2a3a2a,
+    inset 4px 4px 0 #aabb8b;
+  margin-bottom: 2rem;
+  image-rendering: pixelated;
+}
+
+.progressSection {
+  margin-bottom: 1.5rem;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.progressTitle {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+  color: #2a3a2a;
+  text-shadow: 2px 2px 0 #aabb8b;
+  letter-spacing: 1px;
+}
+
+.progressStats {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.8rem;
+  color: #ffd966;
+  text-shadow: 2px 2px 0 #4a5a3a;
+}
+
+.progressBarContainer {
+  width: 100%;
+  height: 20px;
+  background: #4a5a3a;
+  border: 4px solid #2a3a2a;
+  box-shadow:
+    inset -2px -2px 0 #1a2a1a,
+    inset 2px 2px 0 #6b7a5a;
+  position: relative;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: #7a9a4a;
+  border-right: 4px solid #4a6a2a;
+  box-shadow: inset -2px -2px 0 #2a4a2a;
+  transition: width 0.3s steps(8);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
+}
+
+.progressPercentage {
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.6rem;
+  text-shadow: 2px 2px 0 #2a4a2a;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #5a6a4a;
+  border: 4px solid #3a4a3a;
+  box-shadow:
+    inset -2px -2px 0 #2a3a2a,
+    inset 2px 2px 0 #7a8a6a;
+}
+
+.statIcon {
+  font-size: 1.5rem;
+  color: #ffd966;
+  filter: drop-shadow(2px 2px 0 #4a5a3a);
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.statLabel {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.65rem;
+  color: #e0e8c0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.statValue {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.1rem;
+  color: #ffd966;
+  text-shadow: 2px 2px 0 #4a5a3a;
+}
+
+.statValue.warning {
+  color: #ff8c8c;
+  animation: blink 1s steps(2) infinite;
+}
+
+.questionDots {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.dot {
+  width: 30px;
+  height: 30px;
+  background: #4a5a3a;
+  border: 4px solid #2a3a2a;
+  box-shadow:
+    inset -2px -2px 0 #1a2a1a,
+    inset 2px 2px 0 #6b7a5a;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+.dot:hover {
+  transform: translateY(-2px);
+}
+
+.dot.active {
+  background: #ffd966;
+  border-color: #4a6a2a;
+  box-shadow:
+    inset -2px -2px 0 #4a5a3a,
+    inset 2px 2px 0 #ffe68c;
+}
+
+.dot.completed {
+  background: #7a9a4a;
+  border-color: #4a6a2a;
+  position: relative;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dot {
+    width: 25px;
+    height: 25px;
+  }
+}

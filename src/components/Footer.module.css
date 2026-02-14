@@ -1,0 +1,179 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.footer {
+  background: #1a2a1a;
+  color: white;
+  padding: 3rem 0 1.5rem;
+  margin-top: auto;
+  position: relative;
+  border-top: 8px solid #4a5a3a;
+  image-rendering: pixelated;
+  box-shadow: inset 0 4px 0 #0a1a0a;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(70, 90, 70, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(70, 90, 70, 0.2) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.brand h3 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.5rem;
+  color: #ffd966;
+  text-shadow: 4px 4px 0 #4a5a3a;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.brand p {
+  font-family: "Courier New", Courier, monospace;
+  opacity: 0.9;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #e0e8c0;
+  font-weight: bold;
+  background: rgba(70, 90, 70, 0.3);
+  padding: 0.5rem;
+  border: 2px solid #4a5a3a;
+  display: inline-block;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.column h4 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.8rem;
+  color: #f0e68c;
+  text-shadow: 2px 2px 0 #4a5a3a;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column ul li {
+  margin-bottom: 0.75rem;
+}
+
+.column ul li a {
+  color: #e0e8c0;
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: all 0.1s ease;
+  padding: 0.3rem 0.6rem;
+  background: rgba(90, 110, 90, 0.3);
+  border: 2px solid transparent;
+  display: inline-block;
+}
+
+.column ul li a:hover {
+  color: #ffd966;
+  border: 2px solid #7a9a4a;
+  box-shadow:
+    inset -2px -2px 0 #4a6a2a,
+    inset 2px 2px 0 #9aba6a;
+  transform: translateY(2px);
+}
+
+.social {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.social a {
+  color: white;
+  font-size: 1.3rem;
+  transition: all 0.1s ease;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #5a6a4a;
+  border: 4px solid #3a4a3a;
+  box-shadow:
+    inset -2px -2px 0 #2a3a2a,
+    inset 2px 2px 0 #7a8a6a;
+}
+
+.social a:hover {
+  transform: translateY(4px);
+  background: #6b7a5a;
+  color: #ffd966;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 4px solid #4a5a3a;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.75rem;
+  color: #aabb8b;
+  font-weight: bold;
+}
+
+.madeWith {
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  color: #ffd966;
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .links {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .social {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .links {
+    grid-template-columns: 1fr;
+  }
+
+  .brand h3 {
+    font-size: 1.2rem;
+  }
+}

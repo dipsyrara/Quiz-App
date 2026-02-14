@@ -1,0 +1,72 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background: #2d3a2d;
+  background-image:
+    linear-gradient(rgba(70, 90, 70, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(70, 90, 70, 0.3) 1px, transparent 1px);
+  background-size: 32px 32px;
+  image-rendering: pixelated;
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: transparent;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
+  background: rgba(30, 40, 30, 0.8);
+  border: 8px solid #4a5a3a;
+  padding: 3rem;
+  box-shadow:
+    inset -4px -4px 0 #2a3a2a,
+    inset 4px 4px 0 #6b7a5a;
+}
+
+.loading p {
+  color: #ffd966;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
+  text-shadow: 2px 2px 0 #4a5a3a;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  background: #7a9a4a;
+  border: 6px solid #4a6a2a;
+  box-shadow:
+    inset -4px -4px 0 #2a4a2a,
+    inset 4px 4px 0 #9aba6a;
+  animation: spin 1s steps(8) infinite;
+  image-rendering: pixelated;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 1.5rem 1rem;
+  }
+}

@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.loginContainer {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #2d3a2d;
+  background-image:
+    linear-gradient(rgba(70, 90, 70, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(70, 90, 70, 0.3) 1px, transparent 1px);
+  background-size: 32px 32px;
+  padding: 2rem;
+  margin: 0;
+  image-rendering: pixelated;
+}
+
+.loginContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 40, 30, 0.4);
+  pointer-events: none;
+}
+
+.backButton {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #6b4c3c;
+  border: 4px solid #3d2a1e;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+  cursor: pointer;
+  box-shadow:
+    inset -2px -2px 0 #3d2a1e,
+    inset 2px 2px 0 #8b6b5c;
+  text-shadow: 2px 2px 0 #3d2a1e;
+  transition: all 0.1s ease;
+  z-index: 20;
+  image-rendering: pixelated;
+  letter-spacing: 1px;
+}
+
+.backButton:hover {
+  background: #7d5a48;
+  transform: translateY(2px);
+  box-shadow:
+    inset -2px -2px 0 #3d2a1e,
+    inset 2px 2px 0 #9f7e6e;
+}
+
+.loginCard {
+  background: #8b9a6e;
+  border: 8px solid #4a5a3a;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 450px;
+  box-shadow:
+    inset -4px -4px 0 #2a3a2a,
+    inset 4px 4px 0 #aabb8b;
+  position: relative;
+  z-index: 10;
+  image-rendering: pixelated;
+}
+
+.loginCard::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 2px solid #6b7a5a;
+  pointer-events: none;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 4px solid #4a5a3a;
+  padding-bottom: 1rem;
+}
+
+.title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.8rem;
+  color: #ffd966;
+  margin-bottom: 0.75rem;
+  letter-spacing: 3px;
+  text-shadow:
+    4px 4px 0 #4a5a3a,
+    6px 6px 0 #2a3a2a;
+  image-rendering: pixelated;
+}
+
+.subtitle {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1rem;
+  color: #f0e68c;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 0 #4a5a3a;
+}
+
+.description {
+  font-family: "Courier New", Courier, monospace;
+  color: #2a3a2a;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background: #c4d0aa;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 2px solid #4a5a3a;
+  box-shadow: inset -2px -2px 0 #6b7a5a;
+}
+
+.successMessage {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  border-left: 6px solid #10b981;
+  color: #166534;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.05),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.5);
+}
+
+.successMessage span {
+  font-size: 1.3rem;
+}
+
+.errorMessage {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  border-left: 6px solid #ef4444;
+  color: #991b1b;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.05),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.5);
+}
+
+.errorMessage span {
+  font-size: 1.3rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.6rem;
+  color: #2a3a2a;
+  text-shadow: 1px 1px 0 #aabb8b;
+  letter-spacing: 1px;
+}
+
+.labelIcon {
+  color: #2a3a2a;
+  font-size: 0.7rem;
+  filter: drop-shadow(2px 2px 0 #6b7a5a);
+}
+
+.input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: #c4d0aa;
+  border: 4px solid #4a5a3a;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+  color: #1a2a1a;
+  box-shadow:
+    inset -2px -2px 0 #6b7a5a,
+    inset 2px 2px 0 #e0e8c0;
+  image-rendering: pixelated;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #ffd966;
+  background: #d0e0b0;
+  box-shadow:
+    inset -2px -2px 0 #8b9a6e,
+    inset 2px 2px 0 #f0f0d0;
+}
+
+.input::placeholder {
+  color: #5a6b4a;
+  font-size: 0.8rem;
+}
+
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.passwordWrapper .input {
+  padding-right: 3.5rem;
+}
+
+.eyeButton {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #8b9a6e;
+  border: 4px solid #4a5a3a;
+  color: #2a3a2a;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow:
+    inset -2px -2px 0 #4a5a3a,
+    inset 2px 2px 0 #aabb8b;
+  image-rendering: pixelated;
+}
+
+.eyeButton:hover {
+  background: #9aae7a;
+}
+
+.loginButton {
+  width: 100%;
+  padding: 1rem;
+  background: #7a9a4a;
+  border: 6px solid #4a6a2a;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow:
+    inset -4px -4px 0 #2a4a2a,
+    inset 4px 4px 0 #9aba6a;
+  text-shadow: 3px 3px 0 #2a4a2a;
+  letter-spacing: 2px;
+  image-rendering: pixelated;
+  margin-top: 0.5rem;
+}
+
+.loginButton:hover:not(:disabled) {
+  background: #8aaa5a;
+  transform: translateY(2px);
+  box-shadow:
+    inset -4px -4px 0 #2a4a2a,
+    inset 4px 4px 0 #aaca7a;
+}
+
+.loginButton:active:not(:disabled) {
+  transform: translateY(4px);
+  box-shadow:
+    inset -2px -2px 0 #2a4a2a,
+    inset 2px 2px 0 #aaca7a;
+}
+
+.loginButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(50%);
+}
+
+.footer {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  color: #2a3a2a;
+  font-size: 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 4px solid #4a5a3a;
+}
+.successMessage {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  border-left: 4px solid #10b981;
+  color: #166534;
+  padding: 1rem;
+  border-radius: 12px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.successMessage span {
+  font-size: 1.2rem;
+}
+
+.registerLink {
+  color: #ffd966;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 0.25rem;
+  text-shadow: 2px 2px 0 #4a5a3a;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.65rem;
+}
+
+.registerLink:hover {
+  color: #ffe68c;
+  text-decoration: underline;
+}
+
+.funFact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: #c4d0aa;
+  border: 4px solid #4a5a3a;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.7rem;
+  color: #2a3a2a;
+  box-shadow:
+    inset -2px -2px 0 #6b7a5a,
+    inset 2px 2px 0 #e0e8c0;
+  font-weight: bold;
+}
+
+.funFact span {
+  font-size: 1rem;
+  filter: drop-shadow(2px 2px 0 #6b7a5a);
+}
+
+@media (max-width: 640px) {
+  .loginContainer {
+    padding: 1rem;
+  }
+
+  .backButton {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.55rem;
+  }
+
+  .loginCard {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+}

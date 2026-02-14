@@ -1,0 +1,464 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.landing {
+  width: 100%;
+  overflow-x: hidden;
+  background: #1a2e1a;
+  image-rendering: pixelated;
+  position: relative;
+  min-height: 100vh;
+}
+
+.minecraftWorld {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.grassLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: #2a5a2a;
+  background-image:
+    linear-gradient(45deg, #3a6a3a 25%, transparent 25%),
+    linear-gradient(-45deg, #3a6a3a 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #3a6a3a 75%),
+    linear-gradient(-45deg, transparent 75%, #3a6a3a 75%);
+  background-size: 32px 32px;
+  background-position:
+    0 0,
+    0 16px,
+    16px -16px,
+    -16px 0px;
+  opacity: 0.3;
+}
+
+.dirtLayer {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: #4a3a2a;
+  background-image:
+    linear-gradient(45deg, #5a4a3a 25%, transparent 25%),
+    linear-gradient(-45deg, #5a4a3a 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #5a4a3a 75%),
+    linear-gradient(-45deg, transparent 75%, #5a4a3a 75%);
+  background-size: 32px 32px;
+  background-position:
+    0 0,
+    0 16px,
+    16px -16px,
+    -16px 0px;
+  opacity: 0.2;
+}
+
+.stoneLayer {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: #3a3a3a;
+  background-image:
+    linear-gradient(45deg, #4a4a4a 25%, transparent 25%),
+    linear-gradient(-45deg, #4a4a4a 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #4a4a4a 75%),
+    linear-gradient(-45deg, transparent 75%, #4a4a4a 75%);
+  background-size: 32px 32px;
+  background-position:
+    0 0,
+    0 16px,
+    16px -16px,
+    -16px 0px;
+  opacity: 0.2;
+}
+
+.floatingItems,
+.floatingBlocks,
+.walkingMobs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  z-index: 10;
+  background: transparent;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 20;
+  width: 100%;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  background: rgba(30, 40, 30, 0.85);
+  border: 12px solid #4a5a3a;
+  padding: 3rem;
+  box-shadow:
+    inset -6px -6px 0 #2a3a2a,
+    inset 6px 6px 0 #aabb8b,
+    0 20px 40px rgba(0, 0, 0, 0.5);
+  image-rendering: pixelated;
+  backdrop-filter: blur(4px);
+  position: relative;
+}
+
+.heroContent::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 2px solid #6b7a5a;
+  pointer-events: none;
+}
+
+.title {
+  margin-bottom: 2rem;
+}
+
+.titleMain {
+  display: block;
+  font-family: "Press Start 2P", cursive;
+  font-size: 3.5rem;
+  line-height: 1.2;
+  color: #ffd966;
+  text-shadow:
+    6px 6px 0 #4a5a3a,
+    12px 12px 0 #2a3a2a;
+  margin-bottom: 1rem;
+  letter-spacing: 4px;
+  image-rendering: pixelated;
+}
+
+.titleSub {
+  display: block;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.2rem;
+  color: #f0e68c;
+  text-shadow: 4px 4px 0 #4a5a3a;
+  letter-spacing: 2px;
+  margin-top: 0.5rem;
+}
+
+.ctaGroup {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 2.5rem;
+  background: #7a9a4a;
+  border: 8px solid #4a6a2a;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow:
+    inset -6px -6px 0 #2a4a2a,
+    inset 6px 6px 0 #9aba6a;
+  text-shadow: 4px 4px 0 #2a4a2a;
+  letter-spacing: 2px;
+  image-rendering: pixelated;
+  transition: all 0.1s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.primaryButton span {
+  color: white;
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 2.5rem;
+  background: #6b4c3c;
+  border: 8px solid #3d2a1e;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow:
+    inset -6px -6px 0 #3d2a1e,
+    inset 6px 6px 0 #8b6b5c;
+  text-shadow: 4px 4px 0 #3d2a1e;
+  letter-spacing: 2px;
+  image-rendering: pixelated;
+  transition: all 0.1s ease;
+  cursor: pointer;
+  border: none;
+}
+
+/* ========== MINECRAFT CHARACTER ========== */
+.minecraftCharacter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.characterHead {
+  font-size: 3rem;
+  line-height: 1;
+  filter: drop-shadow(4px 4px 0 #2a3a2a);
+}
+
+.characterBody {
+  font-size: 2.5rem;
+  line-height: 1;
+  filter: drop-shadow(4px 4px 0 #2a3a2a);
+}
+
+.characterLegs {
+  font-size: 2rem;
+  line-height: 1;
+  display: flex;
+  gap: 0.5rem;
+  filter: drop-shadow(4px 4px 0 #2a3a2a);
+}
+
+/* ========== MINECRAFT FEATURES ========== */
+.minecraftFeatures {
+  padding: 6rem 0;
+  position: relative;
+  z-index: 15;
+  background: rgba(30, 40, 30, 0.9);
+  backdrop-filter: blur(4px);
+  border-top: 12px solid #4a5a3a;
+  border-bottom: 12px solid #4a5a3a;
+  margin-top: 2rem;
+}
+
+.sectionTitle {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2rem;
+  color: #ffd966;
+  text-shadow: 6px 6px 0 #4a5a3a;
+  margin-bottom: 3rem;
+  line-height: 1.4;
+  text-align: center;
+  word-break: break-word;
+}
+
+.titleAccent {
+  display: block;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1rem;
+  color: #f0e68c;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 1rem;
+  text-shadow: 3px 3px 0 #4a5a3a;
+}
+
+.craftingTable {
+  background: #8b9a6e;
+  border: 12px solid #4a5a3a;
+  padding: 3rem;
+  box-shadow:
+    inset -6px -6px 0 #2a3a2a,
+    inset 6px 6px 0 #aabb8b;
+  image-rendering: pixelated;
+  position: relative;
+}
+
+.craftingTable::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 2px solid #6b7a5a;
+  pointer-events: none;
+}
+
+.craftingGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.craftingSlot {
+  background: #5a6a4a;
+  border: 8px solid #3a4a3a;
+  padding: 1.5rem;
+  box-shadow:
+    inset -4px -4px 0 #2a3a2a,
+    inset 4px 4px 0 #7a8a6a;
+  image-rendering: pixelated;
+  transition: all 0.2s ease;
+}
+
+.craftingSlot:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    inset -4px -4px 0 #2a3a2a,
+    inset 4px 4px 0 #8b9a6e;
+}
+
+.craftItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.craftEmoji {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(6px 6px 0 #2a3a2a);
+  image-rendering: pixelated;
+}
+
+.craftItem h3 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.9rem;
+  color: #ffd966;
+  text-shadow: 3px 3px 0 #4a5a3a;
+  margin-bottom: 0.5rem;
+}
+
+.craftItem p {
+  font-family: "Courier New", Courier, monospace;
+  color: #e0e8c0;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 0 #2a3a2a;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .titleMain {
+    font-size: 2.8rem;
+  }
+
+  .craftingGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    padding: 2rem;
+  }
+
+  .titleMain {
+    font-size: 2.2rem;
+    text-shadow:
+      4px 4px 0 #4a5a3a,
+      8px 8px 0 #2a3a2a;
+  }
+
+  .titleSub {
+    font-size: 1rem;
+  }
+
+  .ctaGroup {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  .craftingTable {
+    padding: 2rem;
+  }
+
+  .craftingGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .craftEmoji {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent {
+    padding: 1.5rem;
+  }
+
+  .titleMain {
+    font-size: 1.8rem;
+    text-shadow:
+      3px 3px 0 #4a5a3a,
+      6px 6px 0 #2a3a2a;
+  }
+
+  .titleSub {
+    font-size: 0.8rem;
+    text-shadow: 2px 2px 0 #4a5a3a;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    font-size: 0.8rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .craftingTable {
+    padding: 1.5rem;
+  }
+
+  .craftEmoji {
+    font-size: 2.5rem;
+  }
+
+  .craftItem h3 {
+    font-size: 0.7rem;
+  }
+
+  .craftItem p {
+    font-size: 0.7rem;
+  }
+}
